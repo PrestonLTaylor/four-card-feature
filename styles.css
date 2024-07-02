@@ -1,0 +1,147 @@
+:root {
+  --main-clr: hsl(229, 6%, 66%);
+  --accent-clr: hsl(234, 12%, 34%);
+  --main-bg-clr: hsl(0, 0%, 98%);
+
+  --main-ff: "Poppins", sans-serif;
+
+  --main-fs: 0.9375rem;
+  --accent-fs: 1.5rem;
+
+  --main-fw: 400;
+  --muted-fw: 200;
+  --accent-fw: 600;
+
+  --tab-border-size: 0.25rem;
+}
+
+/* Relevant CSS reset */
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+body {
+  color: var(--main-clr);
+  font-family: var(--main-ff);
+  font-size: var(--main-fs);
+  font-weight: var(--main-fw);
+}
+
+main {
+  margin: 5.625rem auto;
+  max-width: 80%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--accent-clr);
+}
+
+h1,
+h2 {
+  font-size: calc(1.25rem + 1vw);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: var(--muted-fw);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.product-description {
+  margin: 0 auto;
+  max-width: 31.25rem;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 1.5rem;
+}
+
+/* Flexable layout until we get to a breakpoint where we can do the final desktop design */
+@media (min-width: 1370px) {
+  .feature-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template:
+      "start mid1 end"
+      "start mid2 end";
+  }
+
+  .feature-card:first-child {
+    grid-area: start;
+    align-self: center;
+  }
+
+  .feature-card:nth-child(2) {
+    grid-area: mid1;
+  }
+
+  .feature-card:nth-child(3) {
+    grid-area: mid2;
+  }
+
+  .feature-card:last-child {
+    grid-area: end;
+    align-self: center;
+  }
+}
+
+.feature-card {
+  max-width: 21.875rem;
+  padding: 1rem 1.5rem;
+
+  border-radius: 0.3125rem;
+
+  box-shadow: 0 0 8px var(--main-clr);
+}
+
+.card-description {
+  font-size: 15px;
+}
+
+.card-image {
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  margin-left: auto;
+}
+
+.cyan-tab {
+  border-top: var(--tab-border-size) solid hsl(180, 62%, 55%);
+}
+
+.red-tab {
+  border-top: var(--tab-border-size) solid hsl(0, 78%, 62%);
+}
+
+.orange-tab {
+  border-top: var(--tab-border-size) solid hsl(34, 97%, 64%);
+}
+
+.blue-tab {
+  border-top: var(--tab-border-size) solid hsl(212, 86%, 64%);
+}
